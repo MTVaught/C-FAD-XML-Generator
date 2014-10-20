@@ -74,7 +74,57 @@ public class Main
 				
 			}
 			
-			//66-79
+			//Left-Most Column
+			
+			// Unique Case 66
+			upperLeft = new Pair(35, 163);
+			lowerRight = new Pair(62, 237);
+			boothStart = 66;
+			Element uniqueBooth = doc.createElement("area");
+			uniqueBooth.setAttribute("id", "@+id/booth" + boothStart);
+			uniqueBooth.setAttribute("shape", "rect");
+			uniqueBooth.setAttribute("coords", "" + upperLeft.getX() + ","
+					+ upperLeft.getY() + "," + "" + lowerRight.getX() + ","
+					+ lowerRight.getY());
+			root.appendChild(uniqueBooth);
+
+			// Main chunk 67-78
+			upperLeft = new Pair(36, 239);
+			lowerRight = new Pair(60, 273);
+			boothStart = 67;
+			boothEnd = 78;
+			space = 37;
+			for (int i = boothStart; i <= boothEnd; i++) {
+				String id = "@+id/booth" + i;
+				String shape = "rect";
+				String coords = "" + upperLeft.getX() + "," + upperLeft.getY()
+						+ "," + "" + lowerRight.getX() + ","
+						+ lowerRight.getY();
+
+				Element booth = doc.createElement("area");
+				booth.setAttribute("id", id);
+				booth.setAttribute("shape", shape);
+				booth.setAttribute("coords", coords);
+				root.appendChild(booth);
+
+				upperLeft.setY(upperLeft.getY() + (space));
+				lowerRight.setY(lowerRight.getY() + (space));
+
+			}
+
+			// Unique Case 79
+			upperLeft = new Pair(35, 687);
+			lowerRight = new Pair(62, 762);
+			boothStart = 79;
+			uniqueBooth = doc.createElement("area");
+			uniqueBooth.setAttribute("id", "@+id/booth" + boothStart);
+			uniqueBooth.setAttribute("shape", "rect");
+			uniqueBooth.setAttribute("coords", "" + upperLeft.getX() + ","
+					+ upperLeft.getY() + "," + "" + lowerRight.getX() + ","
+					+ lowerRight.getY());
+			root.appendChild(uniqueBooth);
+			
+			
 			
 			//80-85
 			
