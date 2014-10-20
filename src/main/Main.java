@@ -47,7 +47,17 @@ public class Main
 			Element root = doc.createElement( "map" );
 			root.setAttribute( "name" , "multimap" );
 			doc.appendChild( root );
-	 
+			
+			//1-4
+			generateRun(new Pair(395,764), new Pair(423,799), 1, 4, 30, 0,
+					doc, root);
+			
+			//5
+			generateSingleBox(new Pair(515,764), new Pair(573, 799), 5, doc, root);
+			
+			//6-20
+			generateRun(new Pair(575,764), new Pair(603,799), 6, 20, 30, 0,
+					doc, root);
 			
 			
 			//Back row configuration 36-65
@@ -124,11 +134,22 @@ public class Main
 					+ lowerRight.getY());
 			root.appendChild(uniqueBooth);
 			
+			//80-84
 			
+			upperLeft = new Pair(64, 764);
+			lowerRight = new Pair(92, 799);
+			boothStart = 80;
+			boothEnd = 84;
+			space = 30;
+			generateRun(upperLeft, lowerRight, boothStart, boothEnd, space, 0,
+					doc, root);
 			
-			//80-85
+			//Unique Case 85
+			upperLeft = new Pair(214, 764);
+			lowerRight = new Pair(272, 799);
+			boothStart = 85;
+			generateRun(upperLeft, lowerRight, 85, 85, 0, 0, doc, root);
 			
-	 
 			// write the content into xml file
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
@@ -149,5 +170,34 @@ public class Main
 			tfe.printStackTrace();
 		  }
 		}
+		
+	private static void generateSingleBox(Pair upperLeft, Pair lowerRight,
+			int boothID, Document doc, Element root) {
+		generateRun(upperLeft, lowerRight, boothID, boothID, boothID, boothID,
+				doc, root);
 	}
+	
+	private static void generateRun(Pair upperLeft, Pair lowerRight,
+			int boothStart, int boothEnd, int spaceX, int spaceY, Document doc,
+			Element root) {
+		for (int i = boothStart; i <= boothEnd; i++) {
+			String id = "@+id/booth" + i;
+			String shape = "rect";
+			String coords = "" + upperLeft.getX() + "," + upperLeft.getY()
+					+ "," + "" + lowerRight.getX() + "," + lowerRight.getY();
 
+			Element booth = doc.createElement("area");
+			booth.setAttribute("id", id);
+			booth.setAttribute("shape", shape);
+			booth.setAttribute("coords", coords);
+			root.appendChild(booth);
+
+			upperLeft.setX(upperLeft.getX() + (spaceX));
+			lowerRight.setX(lowerRight.getX() + (spaceX));
+			
+			upperLeft.setY(upperLeft.getY() + (spaceY));
+			lowerRight.setY(lowerRight.getY() + (spaceY));
+
+		}
+	}
+}
