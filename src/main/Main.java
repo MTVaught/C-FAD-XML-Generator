@@ -74,6 +74,114 @@ public class Main
 				
 			}
 			
+			//center left 86-95
+			//first top block
+			upperLeft = new Pair( 143, 256 );
+			lowerRight = new Pair( 173, 291 );
+			String id = "@+id/booth" + 95;
+			String shape = "rect";
+			String coords = "" + upperLeft.getX() + "," + upperLeft.getY() + "," +
+							"" + lowerRight.getX() + "," + lowerRight.getY();
+			Element topBooth = doc.createElement( "area" );
+			topBooth.setAttribute( "id", id );
+			topBooth.setAttribute("shape", shape);
+			topBooth.setAttribute("coords", coords );
+			
+			//add to map
+			root.appendChild( topBooth );
+			
+			//left side of center
+			int dimX = 25;
+			int dimY = 36;
+			upperLeft = new Pair( 131, 293 );
+			lowerRight = new Pair( 156, 329 );
+			boothStart = 94;
+			boothEnd = 88;
+			for ( int i = boothStart; i >= boothEnd; i-- )
+			{
+				id = "@+id/booth" + i;
+				shape = "rect";
+				coords = "" + upperLeft.getX() + "," + upperLeft.getY() + "," +
+						 "" + lowerRight.getX() + "," + lowerRight.getY();
+				
+				Element booth = doc.createElement( "area" );
+				booth.setAttribute("id", id );
+				booth.setAttribute("shape", shape);
+				booth.setAttribute("coords", coords);
+				root.appendChild( booth );
+				
+				upperLeft.setY( upperLeft.getY() - (dimY) );
+				lowerRight.setY( lowerRight.getY() - (dimY) );
+				
+			}
+			
+			//odd double booth at bottom of left side
+			int doubleBoothNum = 87;
+			upperLeft.setY( upperLeft.getY() - (dimY) );
+			lowerRight.setY( lowerRight.getY() - (dimY) );
+			id = "@+id/booth" + doubleBoothNum;
+			shape = "rect";
+			coords = "" + upperLeft.getX() + "," + upperLeft.getY() + "," +
+					 "" + lowerRight.getX() + "," + lowerRight.getY();
+			
+			Element booth = doc.createElement( "area" );
+			booth.setAttribute("id", id );
+			booth.setAttribute("shape", shape);
+			booth.setAttribute("coords", coords);
+			root.appendChild( booth );
+			
+			//odd double booth at the start of the right side.
+			doubleBoothNum = 96;
+			upperLeft = new Pair( 158, 293 );
+			lowerRight = new Pair( 183, 366 );
+			id = "@+id/booth" + doubleBoothNum;
+			shape = "rect";
+			coords = "" + upperLeft.getX() + "," + upperLeft.getY() + "," +
+					 "" + lowerRight.getX() + "," + lowerRight.getY();
+			
+			booth = doc.createElement( "area" );
+			booth.setAttribute("id", id );
+			booth.setAttribute("shape", shape);
+			booth.setAttribute("coords", coords);
+			root.appendChild( booth );
+			
+			//right side of center
+			dimX = 25;
+			dimY = 36;
+			upperLeft = new Pair( 158, 368 );
+			lowerRight = new Pair( 183, 484 );
+			boothStart = 97;
+			boothEnd = 103;
+			for ( int i = boothStart; i <= boothEnd; i++ )
+			{
+				id = "@+id/booth" + i;
+				shape = "rect";
+				coords = "" + upperLeft.getX() + "," + upperLeft.getY() + "," +
+						 "" + lowerRight.getX() + "," + lowerRight.getY();
+				
+				booth = doc.createElement( "area" );
+				booth.setAttribute("id", id );
+				booth.setAttribute("shape", shape);
+				booth.setAttribute("coords", coords);
+				root.appendChild( booth );
+				
+				upperLeft.setY( upperLeft.getY() - (dimY) );
+				lowerRight.setY( lowerRight.getY() - (dimY) );
+				
+			}
+			
+			//odd bottom square
+			upperLeft = new Pair( 142, 631 );
+			lowerRight = new Pair( 172, 664 );
+			id = "@+id/booth" + 86;
+			shape = "rect";
+			coords = "" + upperLeft.getX() + "," + upperLeft.getY() + "," +
+					 "" + lowerRight.getX() + "," + lowerRight.getY();
+			Element bottomBooth = doc.createElement( "area" );
+			bottomBooth.setAttribute( "id", id );
+			bottomBooth.setAttribute("shape", shape);
+			bottomBooth.setAttribute("coords", coords );
+			
 			//66-79
 			
 			//80-85
