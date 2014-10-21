@@ -63,7 +63,7 @@ public class Main
 			generateSingleBox(new Pair(1025,687), new Pair(1050, 760), 21, doc, root);
 			
 			//22-34
-			generateRun(new Pair(1025,650), new Pair(1050,685), 22, 34, 0, 37,
+			generateRun(new Pair(1025,650), new Pair(1050,685), 22, 34, 0, -37,
 					doc, root);
 			//35
 			generateSingleBox(new Pair(1025,130), new Pair(1050, 197), 35, doc, root);
