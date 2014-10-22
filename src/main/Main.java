@@ -158,6 +158,21 @@ public class Main
 			boothStart = 85;
 			generateRun(upperLeft, lowerRight, 85, 85, 0, 0, doc, root);
 			
+			//212
+			generateSingleBox(new Pair(907,631), new Pair(937, 666), 212, doc, root);
+			//213
+			generateSingleBox(new Pair(896,556), new Pair(921, 629), 213, doc, root);
+			//214-220
+			generateRun(new Pair(896,519), new Pair(920,554), 214, 220, 0, -38,
+					doc, root);
+			//221
+			generateSingleBox(new Pair(907,256), new Pair(937, 291), 221, doc, root);
+			//222
+			generateSingleBox(new Pair(923,293), new Pair(947, 366), 222, doc, root);
+			//223-229
+			generateRun(new Pair(923,369), new Pair(947,404), 223, 229, 0, 36,
+					doc, root);
+			
 			// write the content into xml file
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
