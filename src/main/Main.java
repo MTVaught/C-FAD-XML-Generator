@@ -59,6 +59,14 @@ public class Main
 			generateRun(new Pair(575,764), new Pair(603,799), 6, 20, 30, 0,
 					doc, root);
 			
+			//21
+			generateSingleBox(new Pair(1025,687), new Pair(1050, 760), 21, doc, root);
+			
+			//22-34
+			generateRun(new Pair(1025,650), new Pair(1050,685), 22, 34, 0, -37,
+					doc, root);
+			//35
+			generateSingleBox(new Pair(1025,130), new Pair(1050, 197), 35, doc, root);
 			
 			//Back row configuration 36-65
 			Pair upperLeft = new Pair( 935, 126 );
